@@ -5,7 +5,7 @@
 $Log_File = "C:\ProgramData\DigitalTavle\Logs\Keyboard_Filter_Remediation.log"
 $Keyboard_Shortcuts_to_disable = @(
     # --- System escape & task switching ---
-    "Ctrl+Alt+Del",       # Secure attention sequence (note: not blockable from user-mode)
+    "Ctrl+Alt+Del",       # Secure attention sequence
     "Ctrl+Shift+Esc",     # Task Manager
     "Ctrl+Esc",           # Start menu when Win key is disabled
     "Alt+Tab",            # App switcher
@@ -13,7 +13,7 @@ $Keyboard_Shortcuts_to_disable = @(
     "Alt+Esc",            # Cycle through windows
     "Win+Tab",            # Task view / desktops
     "Alt+F4",             # Close app
-    "Win+L",              # Lock workstation (often not interceptable by user-mode hooks)
+    "Win+L",              # Lock workstation
 
     # --- Start / Search / Launchers / System panes ---
     # "Windows",            # Windows key alone (opens Start)
@@ -232,5 +232,6 @@ if (-not $wekfClasses) {
 foreach ($shortcut in $Keyboard_Shortcuts_to_disable) {
     Block-Shortcut -KeyID $shortcut
 }
+
 
 
